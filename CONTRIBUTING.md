@@ -37,7 +37,7 @@ Before opening a pull request, you should already have:
   "developer": "Your name or handle",
   "repository": "https://github.com/you/example-addon",
   "homepage": "https://github.com/you/example-addon#readme",
-  "requestedScopes": ["webhooks:manage", "notes:read"],
+  "requestedScopes": ["Notes.GetAll", "WebhooksProxy.Create"],
   "redirectUriPattern": "https://your-addon.example.com/studylife/callback"
 }
 ```
