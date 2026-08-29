@@ -1,0 +1,25 @@
+{
+  "$comment": "Mirrors ApiKeyScopes.PubliclyGrantable in the studylife repo (src/StudyLife.Server/Auth/ApiKeyScopes.cs), minus Auth.Whoami - every registered client gets that one automatically, it is never requested. Kept in sync by hand; update both sides together whenever a new scope is exposed to dynamic clients.",
+  "scopes": [
+    "Notes.GetAll",
+    "Notes.Search",
+    "Notes.Create",
+    "Notes.Update",
+    "Notes.Delete",
+    "Sessions.GetAll",
+    "Sessions.GetHistory",
+    "Sessions.Create",
+    "Sessions.Update",
+    "Sessions.Delete",
+    "CourseGoals.GetAll",
+    "CourseGoals.Save",
+    "CourseGoals.Delete",
+    "TimerState.Get",
+    "Courses.GetAll",
+    "StudyPrograms.GetAll",
+    "StudyPrograms.Get",
+    "WebhooksProxy.List",
+    "WebhooksProxy.Create",
+    "WebhooksProxy.Delete"
+  ]
+}
