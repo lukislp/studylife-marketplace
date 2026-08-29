@@ -1,0 +1,31 @@
+{
+  "id": "studylife-cli",
+  "name": "StudyLife CLI",
+  "description": "Command-line client for StudyLife: manage notes, sessions, course goals, the focus timer, courses, study programs, and webhooks from your terminal, with a --json flag for scripting.",
+  "developer": "lukislp",
+  "repository": "https://github.com/lukislp/studylife-cli",
+  "homepage": "https://github.com/lukislp/studylife-cli#readme",
+  "requestedScopes": [
+    "Notes.GetAll",
+    "Notes.Search",
+    "Notes.Create",
+    "Notes.Update",
+    "Notes.Delete",
+    "Sessions.GetAll",
+    "Sessions.GetHistory",
+    "Sessions.Create",
+    "Sessions.Update",
+    "Sessions.Delete",
+    "CourseGoals.GetAll",
+    "CourseGoals.Save",
+    "CourseGoals.Delete",
+    "TimerState.Get",
+    "Courses.GetAll",
+    "StudyPrograms.GetAll",
+    "StudyPrograms.Get",
+    "WebhooksProxy.List",
+    "WebhooksProxy.Create",
+    "WebhooksProxy.Delete"
+  ],
+  "redirectUriPattern": "http://127.0.0.1:8765/callback"
+}
