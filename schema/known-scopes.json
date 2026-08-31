@@ -18,6 +18,7 @@
     "Courses.GetAll",
     "StudyPrograms.GetAll",
     "StudyPrograms.Get",
+    "Metrics.GetSummary",
     "WebhooksProxy.List",
     "WebhooksProxy.Create",
     "WebhooksProxy.Delete"
