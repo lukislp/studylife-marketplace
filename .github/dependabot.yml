@@ -1,0 +1,9 @@
+# Weekly Dependabot updates: GitHub Actions only; the repo holds no package manifests.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: "fix(ci)"
