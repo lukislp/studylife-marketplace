@@ -1,5 +1,7 @@
 # StudyLife Marketplace
 
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/lukislp/studylife-marketplace/badge)](https://scorecard.dev/viewer/?uri=github.com/lukislp/studylife-marketplace) [![CodeQL](https://github.com/lukislp/studylife-marketplace/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/lukislp/studylife-marketplace/security/code-scanning)
+
 A public catalog of add-ons for [StudyLife](https://github.com/lukislp/studylife) — self-hosted
 study-tracking software. Every StudyLife instance is privately hosted by its own owner (nothing
 here needs to be, or ever is, publicly reachable except this repository); this catalog is the one
