@@ -22,7 +22,10 @@ if (files.length === 0) {
 try {
   execSync(
     `npx --yes ajv-cli validate -s schema/manifest.schema.json -d "listings/*.json" --spec=draft2020`,
-    { cwd: root, stdio: "inherit" },
+    { cwd: root, // ajv-cli drags in unmaintained transitive packages (glob@7, inflight) that npm flags as
+      // deprecated on every ad-hoc install; that noise is npm's, not ours - keep only errors.
+      env: { ...process.env, NPM_CONFIG_LOGLEVEL: "error" },
+      stdio: "inherit" },
   );
 } catch {
   console.error("Schema validation failed - see ajv output above.");
