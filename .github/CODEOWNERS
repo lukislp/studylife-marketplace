@@ -1,0 +1,15 @@
+# This is the one repository here that is built around pull requests from other people:
+# add-on authors submit their own listing under listings/. A listing is metadata only - a
+# name, the scopes the add-on asks for, and a link to its own repository - never code.
+#
+# The catch-all below is what makes GitHub request a review automatically on every such
+# pull request, instead of relying on the notification being noticed.
+* @lukislp
+
+# The validation contract and everything that runs in CI. A listing pull request has no
+# business touching these, so they are called out separately: if one of them shows up in
+# the diff of a submission, that is the first thing the review has to explain.
+/schema/ @lukislp
+/scripts/ @lukislp
+/.github/ @lukislp
+/LICENSE @lukislp
