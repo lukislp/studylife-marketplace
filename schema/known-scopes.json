@@ -15,6 +15,7 @@
     "CourseGoals.Save",
     "CourseGoals.Delete",
     "TimerState.Get",
+    "TimerState.Save",
     "Courses.GetAll",
     "StudyPrograms.GetAll",
     "StudyPrograms.Get",
