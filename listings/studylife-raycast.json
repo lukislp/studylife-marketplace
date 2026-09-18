@@ -1,7 +1,7 @@
 {
   "id": "studylife-raycast",
   "name": "StudyLife for Raycast",
-  "description": "Control the StudyLife focus timer from Raycast and the macOS menu bar: start, pause and stop a session, watch the countdown in the menu bar, and check this week's hours, streak and open course goals without leaving the launcher.",
+  "description": "Control the StudyLife focus timer from Raycast and the macOS menu bar: pick a course and start, pause and stop a session, watch the countdown in the menu bar, capture a quick note, and check today's and this week's hours, streak and open course goals without leaving the launcher.",
   "developer": "lukislp",
   "repository": "https://github.com/lukislp/studylife-raycast",
   "homepage": "https://github.com/lukislp/studylife-raycast#readme",
@@ -10,7 +10,10 @@
     "TimerState.Save",
     "CourseGoals.GetAll",
     "Courses.GetAll",
-    "Metrics.GetSummary"
+    "Metrics.GetSummary",
+    "Sessions.Create",
+    "Sessions.GetHistory",
+    "Notes.Create"
   ],
   "redirectUriPattern": "http://127.0.0.1:8795/callback"
 }
