@@ -1,13 +1,14 @@
 {
   "id": "studylife-vscode",
   "name": "StudyLife for VS Code",
-  "description": "Control the StudyLife focus timer from the editor: start, pause and stop a session, watch the countdown in a sidebar panel, and turn coding time in a workspace into a logged study session for the course you pick.",
+  "description": "Control the StudyLife focus timer from the editor: start, pause and stop a session, watch the countdown and your next upcoming sessions in a sidebar panel, and turn coding time in a workspace into a logged study session for the course you pick.",
   "developer": "lukislp",
   "repository": "https://github.com/lukislp/studylife-vscode",
   "homepage": "https://github.com/lukislp/studylife-vscode#readme",
   "requestedScopes": [
     "TimerState.Get",
     "TimerState.Save",
+    "Sessions.GetAll",
     "Sessions.GetHistory",
     "Sessions.Create",
     "Courses.GetAll",
