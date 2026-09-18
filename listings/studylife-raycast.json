@@ -13,7 +13,10 @@
     "Metrics.GetSummary",
     "Sessions.Create",
     "Sessions.GetHistory",
-    "Notes.Create"
+    "Notes.Create",
+    "WebhooksProxy.List",
+    "WebhooksProxy.Create",
+    "WebhooksProxy.Delete"
   ],
   "redirectUriPattern": "http://127.0.0.1:8795/callback"
 }
