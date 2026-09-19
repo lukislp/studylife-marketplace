@@ -1,0 +1,17 @@
+{
+  "id": "studylife-newtab",
+  "name": "StudyLife New Tab",
+  "description": "Replaces the browser's New Tab page with a StudyLife dashboard: hours studied this week, your streak, upcoming sessions, recent activity, course-goal deadlines, programme progress and recent notes - every time you open a tab.",
+  "developer": "lukislp",
+  "repository": "https://github.com/lukislp/studylife-newtab",
+  "homepage": "https://github.com/lukislp/studylife-newtab#readme",
+  "requestedScopes": [
+    "TimerState.Get",
+    "Metrics.GetSummary",
+    "CourseGoals.GetAll",
+    "Sessions.GetAll",
+    "Sessions.GetHistory",
+    "Notes.GetAll"
+  ],
+  "redirectUriPattern": "https://coempecnaaoacipdjcmkjemkcbfebkem.chromiumapp.org/"
+}
