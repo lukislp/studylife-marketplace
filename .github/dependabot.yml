@@ -7,3 +7,5 @@ updates:
       interval: weekly
     commit-message:
       prefix: "fix(ci)"
+    reviewers:
+      - "lukislp"
