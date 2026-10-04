@@ -20,6 +20,7 @@
     "StudyPrograms.GetAll",
     "StudyPrograms.Get",
     "Metrics.GetSummary",
+    "Metrics.GetAchievements",
     "WebhooksProxy.List",
     "WebhooksProxy.Create",
     "WebhooksProxy.Delete"
