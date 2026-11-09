@@ -1,0 +1,20 @@
+{
+  "name": "studylife-marketplace",
+  "private": true,
+  "description": "Listing manifests for the StudyLife client marketplace. The package exists only to run the validation tests.",
+  "license": "AGPL-3.0-or-later",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lukislp/studylife-marketplace.git"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "devDependencies": {
+    "fast-check": "4.10.2"
+  }
+}

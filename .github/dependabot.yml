@@ -1,4 +1,4 @@
-# Weekly Dependabot updates: GitHub Actions only; the repo holds no package manifests.
+# Dependabot updates: GitHub Actions, plus the one dev dependency (fast-check) of the listing tests.
 version: 2
 updates:
   - package-ecosystem: github-actions
@@ -30,3 +30,14 @@ updates:
       codeql-action:
         patterns:
           - "github/codeql-action*"
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: daily
+    commit-message:
+      prefix: "fix(deps)"
+    reviewers:
+      - "lukislp"
+    open-pull-requests-limit: 5
+    cooldown:
+      default-days: 3
