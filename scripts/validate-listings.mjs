@@ -7,6 +7,7 @@
 import { readFileSync, readdirSync } from "node:fs";
 import { execSync } from "node:child_process";
 import path from "node:path";
+import { listingProblems } from "./listing-checks.mjs";
 
 const root = path.resolve(import.meta.dirname, "..");
 const listingsDir = path.join(root, "listings");
@@ -36,16 +37,8 @@ let failed = false;
 
 for (const file of files) {
   const manifest = JSON.parse(readFileSync(path.join(listingsDir, file), "utf8"));
-  const expectedId = path.basename(file, ".json");
-
-  if (manifest.id !== expectedId) {
-    console.error(`${file}: "id" (${manifest.id}) must match the filename (${expectedId}).`);
-    failed = true;
-  }
-
-  const unknownScopes = manifest.requestedScopes.filter((s) => !knownScopes.has(s));
-  if (unknownScopes.length > 0) {
-    console.error(`${file}: requestedScopes contains unknown scope(s): ${unknownScopes.join(", ")}. See schema/known-scopes.json for the current list.`);
+  for (const problem of listingProblems(file, manifest, knownScopes)) {
+    console.error(problem);
     failed = true;
   }
 
