@@ -1,7 +1,7 @@
 {
   "id": "studylife-raycast",
-  "name": "StudyLife for Raycast",
-  "description": "Control the StudyLife focus timer from Raycast and the macOS menu bar: pick a course and start, pause and stop a session, watch the countdown in the menu bar, capture a quick note, and check today's and this week's hours, streak and open course goals without leaving the launcher.",
+  "name": "StudyAtrium for Raycast",
+  "description": "Control the StudyAtrium focus timer from Raycast and the macOS menu bar: pick a course and start, pause and stop a session, watch the countdown in the menu bar, capture a quick note, and check today's and this week's hours, streak and open course goals without leaving the launcher.",
   "developer": "lukislp",
   "repository": "https://github.com/lukislp/studylife-raycast",
   "homepage": "https://github.com/lukislp/studylife-raycast#readme",

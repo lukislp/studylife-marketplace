@@ -1,7 +1,7 @@
 {
   "id": "studylife-streamdeck",
-  "name": "StudyLife for Stream Deck",
-  "description": "Control the StudyLife focus timer, track course-goal countdowns and drop preset notes from physical Stream Deck keys: start, pause, resume and stop a session (booked automatically when unplanned), watch today's study status update live, and switch the current course between keys.",
+  "name": "StudyAtrium for Stream Deck",
+  "description": "Control the StudyAtrium focus timer, track course-goal countdowns and drop preset notes from physical Stream Deck keys: start, pause, resume and stop a session (booked automatically when unplanned), watch today's study status update live, and switch the current course between keys.",
   "developer": "lukislp",
   "repository": "https://github.com/lukislp/studylife-streamdeck",
   "homepage": "https://github.com/lukislp/studylife-streamdeck#readme",

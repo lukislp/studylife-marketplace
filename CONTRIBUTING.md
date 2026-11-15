@@ -4,9 +4,9 @@
 
 Before opening a pull request, you should already have:
 
-1. Built your add-on against your **own** StudyLife instance, registering it via
+1. Built your add-on against your **own** StudyAtrium instance, registering it via
    [studylife-developers](https://github.com/lukislp/studylife-developers) (the same generic
-   connect flow every other StudyLife satellite uses — see that repo's own README for the exact
+   connect flow every other StudyAtrium satellite uses — see that repo's own README for the exact
    steps).
 2. Tested the full connect → consent → callback round trip end to end, against your own account.
 3. A public repository your add-on's actual code lives in, with at least a README explaining what

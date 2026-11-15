@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/lukislp/studylife-marketplace/schema/manifest.schema.json",
-  "title": "StudyLife Marketplace Listing",
+  "title": "StudyAtrium Marketplace Listing",
   "type": "object",
   "additionalProperties": false,
   "required": ["id", "name", "description", "developer", "repository", "requestedScopes", "redirectUriPattern"],

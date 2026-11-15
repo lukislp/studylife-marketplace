@@ -1,22 +1,22 @@
-# StudyLife Marketplace
+# StudyAtrium Marketplace
 
 [![Validate listings](https://github.com/lukislp/studylife-marketplace/actions/workflows/validate.yml/badge.svg)](https://github.com/lukislp/studylife-marketplace/actions/workflows/validate.yml) [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/lukislp/studylife-marketplace/badge)](https://scorecard.dev/viewer/?uri=github.com/lukislp/studylife-marketplace) [![CodeQL](https://github.com/lukislp/studylife-marketplace/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/lukislp/studylife-marketplace/security/code-scanning)
 [![License: AGPL-3.0](https://img.shields.io/github/license/lukislp/studylife-marketplace)](LICENSE)
 
-A public catalog of add-ons for [StudyLife](https://github.com/lukislp/studylife) — self-hosted
-study-tracking software. Every StudyLife instance is privately hosted by its own owner (nothing
+A public catalog of add-ons for [StudyAtrium](https://github.com/lukislp/studylife) — self-hosted
+study-tracking software. Every StudyAtrium instance is privately hosted by its own owner (nothing
 here needs to be, or ever is, publicly reachable except this repository); this catalog is the one
 shared, public piece that lets any instance discover what add-ons exist.
 
 ## How it works
 
-1. A developer registers their add-on against their **own** StudyLife instance, using the
+1. A developer registers their add-on against their **own** StudyAtrium instance, using the
    [studylife-developers](https://github.com/lukislp/studylife-developers) portal — picking a
    name, the scopes their add-on needs, and a redirect URI.
 2. They submit a manifest here as a **pull request** — see [CONTRIBUTING.md](CONTRIBUTING.md).
    The manifest is a pointer (name, description, a link to the add-on's own repository), never
    the add-on's actual code.
-3. Once merged, any StudyLife instance's own Setup-page marketplace modal can find it — each
+3. Once merged, any StudyAtrium instance's own Setup-page marketplace modal can find it — each
    instance fetches this repository's `listings/` directory read-only, entirely independent of
    who owns which instance.
 4. Installing happens locally, on whichever instance the installing user owns — this repository

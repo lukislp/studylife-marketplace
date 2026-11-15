@@ -1,7 +1,7 @@
 {
   "name": "studylife-marketplace",
   "private": true,
-  "description": "Listing manifests for the StudyLife client marketplace. The package exists only to run the validation tests.",
+  "description": "Listing manifests for the StudyAtrium client marketplace. The package exists only to run the validation tests.",
   "license": "AGPL-3.0-or-later",
   "repository": {
     "type": "git",
