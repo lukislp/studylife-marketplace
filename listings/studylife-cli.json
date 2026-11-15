@@ -1,7 +1,7 @@
 {
   "id": "studylife-cli",
-  "name": "StudyLife CLI",
-  "description": "Command-line client for StudyLife: manage notes, sessions, course goals, the focus timer, courses, study programs, and webhooks from your terminal, with a --json flag for scripting.",
+  "name": "StudyAtrium CLI",
+  "description": "Command-line client for StudyAtrium: manage notes, sessions, course goals, the focus timer, courses, study programs, and webhooks from your terminal, with a --json flag for scripting.",
   "developer": "lukislp",
   "repository": "https://github.com/lukislp/studylife-cli",
   "homepage": "https://github.com/lukislp/studylife-cli#readme",

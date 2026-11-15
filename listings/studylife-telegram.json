@@ -1,7 +1,7 @@
 {
   "id": "studylife-telegram",
-  "name": "StudyLife for Telegram",
-  "description": "A self-hosted Telegram bot for StudyLife: run the focus timer from chat, check today's hours and your next planned sessions, save quick notes, and get a reminder before each session starts. Each chat connects its own StudyLife account.",
+  "name": "StudyAtrium for Telegram",
+  "description": "A self-hosted Telegram bot for StudyAtrium: run the focus timer from chat, check today's hours and your next planned sessions, save quick notes, and get a reminder before each session starts. Each chat connects its own StudyAtrium account.",
   "developer": "lukislp",
   "repository": "https://github.com/lukislp/studylife-telegram",
   "homepage": "https://github.com/lukislp/studylife-telegram#readme",
