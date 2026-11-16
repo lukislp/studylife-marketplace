@@ -4,7 +4,7 @@
   "title": "StudyAtrium Marketplace Listing",
   "type": "object",
   "additionalProperties": false,
-  "required": ["id", "name", "description", "developer", "repository", "requestedScopes", "redirectUriPattern"],
+  "required": ["id", "name", "description", "developer", "repository", "requestedScopes"],
   "properties": {
     "id": {
       "type": "string",
@@ -43,7 +43,25 @@
     "redirectUriPattern": {
       "type": "string",
       "minLength": 1,
-      "maxLength": 500
+      "maxLength": 500,
+      "description": "Redirect URI the add-on registers. Required for oauth listings (the default); not allowed for manual ones."
+    },
+    "install": {
+      "enum": ["oauth", "manual"],
+      "description": "How the client installs the add-on. Absent means \"oauth\" (one-click install with redirectUriPattern). \"manual\" is for self-hosted add-ons whose redirect URI depends on the user's own deployment: the client shows setupUrl instead of an Install button."
+    },
+    "setupUrl": {
+      "type": "string",
+      "pattern": "^https://",
+      "maxLength": 500,
+      "description": "Link to the add-on's setup documentation. Required (and only meaningful) when install is \"manual\"."
     }
-  }
+  },
+  "allOf": [
+    {
+      "if": { "required": ["install"], "properties": { "install": { "const": "manual" } } },
+      "then": { "required": ["setupUrl"], "not": { "required": ["redirectUriPattern"] } },
+      "else": { "required": ["redirectUriPattern"], "not": { "required": ["setupUrl"] } }
+    }
+  ]
 }

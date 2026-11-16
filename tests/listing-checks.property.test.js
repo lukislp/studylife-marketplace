@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import path from "node:path";
 import { describe, it } from "node:test";
 import fc from "fast-check";
-import { expectedId, listingProblems, unknownScopes } from "../scripts/listing-checks.mjs";
+import { expectedId, installProblems, isManualInstall, listingProblems, unknownScopes } from "../scripts/listing-checks.mjs";
 
 const root = path.resolve(import.meta.dirname, "..");
 const known = JSON.parse(readFileSync(path.join(root, "schema/known-scopes.json"), "utf8")).scopes;
@@ -55,7 +55,7 @@ describe("listingProblems (property-based)", () => {
   it("passes a listing whose id matches its filename and whose scopes are all known", () => {
     fc.assert(
       fc.property(listingId, fc.array(fc.constantFrom(...known), { maxLength: 20 }), (id, requestedScopes) => {
-        assert.deepEqual(listingProblems(`${id}.json`, { id, requestedScopes }, known), []);
+        assert.deepEqual(listingProblems(`${id}.json`, { id, requestedScopes, redirectUriPattern: "https://a.example/cb" }, known), []);
       }),
     );
   });
@@ -68,12 +68,46 @@ describe("listingProblems (property-based)", () => {
         fc.array(fc.stringMatching(/^X\.[A-Za-z]{1,10}$/), { minLength: 1, maxLength: 5 }),
         (fileId, manifestId, bogus) => {
           const idMismatch = fileId !== manifestId;
-          const problems = listingProblems(`${fileId}.json`, { id: manifestId, requestedScopes: bogus }, known);
+          const problems = listingProblems(`${fileId}.json`, { id: manifestId, requestedScopes: bogus, redirectUriPattern: "https://a.example/cb" }, known);
           assert.equal(problems.length, idMismatch ? 2 : 1);
           assert.ok(problems.every((p) => p.startsWith(`${fileId}.json:`)));
           assert.ok(bogus.every((s) => problems.some((p) => p.includes(s))));
         },
       ),
+    );
+  });
+});
+
+describe("installProblems (install mode)", () => {
+  const uri = "https://a.example/cb";
+  const setup = "https://a.example/setup";
+
+  it("accepts oauth listings (field absent or explicit) with a redirect URI and no setupUrl", () => {
+    for (const extra of [{}, { install: "oauth" }]) {
+      assert.deepEqual(installProblems("a.json", { redirectUriPattern: uri, ...extra }), []);
+    }
+  });
+
+  it("accepts manual listings with a setupUrl and no redirect URI", () => {
+    assert.deepEqual(installProblems("a.json", { install: "manual", setupUrl: setup }), []);
+  });
+
+  it("rejects an oauth listing without a redirect URI, or carrying a setupUrl", () => {
+    assert.equal(installProblems("a.json", {}).length, 1);
+    assert.equal(installProblems("a.json", { install: "oauth" }).length, 1);
+    assert.equal(installProblems("a.json", { redirectUriPattern: uri, setupUrl: setup }).length, 1);
+  });
+
+  it("rejects a manual listing without setupUrl or with a redirect URI", () => {
+    assert.equal(installProblems("a.json", { install: "manual" }).length, 1);
+    assert.equal(installProblems("a.json", { install: "manual", setupUrl: setup, redirectUriPattern: uri }).length, 1);
+  });
+
+  it("isManualInstall is true only for the explicit value", () => {
+    fc.assert(
+      fc.property(fc.oneof(fc.constant(undefined), fc.string()), (install) => {
+        assert.equal(isManualInstall({ install }), install === "manual");
+      }),
     );
   });
 });

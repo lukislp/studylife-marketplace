@@ -51,7 +51,20 @@ Before opening a pull request, you should already have:
 | `repository` | yes | Where your add-on's actual code lives - checked by CI to resolve |
 | `homepage` | no | Install/setup instructions, if separate from the repository's own README |
 | `requestedScopes` | yes | See [`schema/known-scopes.json`](schema/known-scopes.json) for the current list |
-| `redirectUriPattern` | yes | The redirect URI your add-on registered - informational, for reviewers |
+| `redirectUriPattern` | yes, unless `install` is `manual` | The redirect URI your add-on registered - informational, for reviewers. Not allowed on manual listings |
+| `install` | no | `oauth` (default when absent) or `manual`. Use `manual` for self-hosted add-ons whose redirect URI depends on each user's own deployment; the client then shows setup steps instead of a one-click Install button |
+| `setupUrl` | yes if `install` is `manual` | `https://` link to the add-on's setup documentation. Not allowed on oauth listings |
+
+A self-hosted add-on (for example a bot each user runs on their own host) has no single redirect URI
+the catalog can know. List it with `"install": "manual"` and a `setupUrl` instead of a placeholder
+`redirectUriPattern`:
+
+```json
+{
+  "install": "manual",
+  "setupUrl": "https://github.com/you/example-addon#setup"
+}
+```
 
 ## Updating an existing listing
 

@@ -15,5 +15,6 @@
     "Sessions.GetHistory",
     "Sessions.Create"
   ],
-  "redirectUriPattern": "https://<your-deployment-host>/connect/callback"
+  "install": "manual",
+  "setupUrl": "https://github.com/lukislp/studylife-telegram#1-register-the-client-on-your-studylife-instance"
 }
